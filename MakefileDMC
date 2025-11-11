@@ -1,0 +1,23 @@
+CC = dmc
+CCFLAGS = -v1
+INCLUDE = -IC:\\scordykp\\dm\\stlport\\stlport -I.\\include
+LIBS = winmm.lib wsock32.lib ws2_32.lib
+
+
+SRC = main
+all: $(SRC).exe
+
+.IGNORE
+clean:
+	del *.map
+	del *.obj
+    del *.exe
+	del *.def
+	del *.dll
+
+.IGNORE
+run:
+	.\$(SRC)
+
+$(SRC).exe: $(SRC).cpp
+	$(CC) $(CCFLAGS) $(INCLUDE) $** $(LIBS)
