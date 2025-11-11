@@ -1,7 +1,7 @@
 # C++ Console Application
 
 ## Overview
-This is a simple C++ console application that demonstrates basic C++ program structure. The program outputs "Test" to the console.
+This is a simple C++ console application that demonstrates unsigned integer types in C++. The program displays the size (in bytes) of different unsigned integer types: `unsigned short`, `unsigned int`, `unsigned long`, and `unsigned long long`.
 
 ## Project Setup
 - **Language**: C++ (C++03 standard)
@@ -30,7 +30,8 @@ The workflow is configured to automatically clean, build, and run the program.
 - Flags: `-Wall -g` (all warnings, debug info)
 
 ## Recent Changes
-- **2025-11-08**: Project imported and set up for Replit environment
-  - Installed C++ toolchain (cpp-clang14)
-  - Configured build workflow
-  - Verified successful compilation and execution
+- **2025-11-11**: Project imported and set up for Replit environment
+  - Verified C++ toolchain (cpp-clang14) installation
+  - Configured build workflow: `make clean && make && ./main`
+  - Successfully compiled and executed the program
+  - Program demonstrates unsigned integer type sizes
