@@ -2,6 +2,11 @@
 #include <iostream>
 #include <vector>
 
+
+void foo(unsigned int)
+{
+}
+
 int main()
 {
   std::cout << "Signed integers" << "\n";
@@ -34,6 +39,11 @@ int main()
   // There are still a few cases in C++ where it’s okay / necessary to use unsigned numbers.
   // First, unsigned numbers are preferred when dealing with bit manipulation. They are also useful when well-defined wrap-around behavior is required (useful in some algorithms like encryption and random number generation).
   // Second, use of unsigned numbers is still unavoidable in some cases, mainly those having to do with array indexing.
+
+  int x1 = 5;
+  unsigned int x2 = {x1};
+  foo(x1);
+  std::cout << "check: " << x2 << "\n";
 
   return 0;
 }
