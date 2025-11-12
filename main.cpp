@@ -2,48 +2,29 @@
 #include <iostream>
 #include <vector>
 
-void doSomething(unsigned int x)
-{
-  std::cout << "x is " << x << '\n';
-}
-
 int main()
 {
-  std::cout << "4.5 - Unsigned integers" << "\n";
+  std::cout << "Signed integers" << "\n";
 
-  unsigned char uc;
-  unsigned short us;
-  unsigned int ui;
-  unsigned long ul;
-  unsigned long long ull;
+  signed char sc;
+  signed short ss;
+  signed int si;
+  signed long sl;
+  signed long long sll;
 
-  std::cout << "size unsigned char: " << sizeof(uc) << "\n";
-  std::cout << "size unsigned short: " << sizeof(us) << "\n";
-  std::cout << "size unsigned interger: " << sizeof(ui) << "\n";
-  std::cout << "size unsigned long: " << sizeof(ul) << "\n";
-  std::cout << "size unsigned long long: " << sizeof(ull) << "\n";
+  std::cout << "size signed char: " << sizeof(sc) << "\n";
+  std::cout << "size signed short: " << sizeof(ss) << "\n";
+  std::cout << "size signed interger: " << sizeof(si) << "\n";
+  std::cout << "size signed long: " << sizeof(sl) << "\n";
+  std::cout << "size signed long long: " << sizeof(sll) << "\n";
 
-  std::cout << "Maximum value of unsigned short: " << std::numeric_limits<unsigned short>::max() << std::endl;
+  std::cout << "Maximum value of signed short: " << std::numeric_limits<signed short>::max() << std::endl;
 
-  // If an unsigned value is out of range,
-  // it is divided by one greater than the largest number of the type, and only the remainder kept.
-  us = 65536;
-  std::cout << "check us: " << us << "\n";
-
-  // if a mathematical operation has one signed integer and one unsigned integer,
-  // the signed integer will usually be converted to an unsigned integer
-  unsigned int u = 2;
-  signed int s = 3;
-  std::cout << u - s << '\n'; // 2 - 3 = 4294967295
-
-  signed int ss = -1;
-  unsigned int uu = 1;
-  if (ss < uu) // -1 is implicitly converted to 4294967295, and 4294967295 < 1 is false
-    std::cout << "-1 is less than 1\n";
-  else
-    std::cout << "1 is less than -1\n"; // this statement executes
-
-  doSomething(-1);
+  // Overflow in signed integers results in undefined behavior in C++,
+  // meaning the program's behavior is not guaranteed by the standard and can vary across compilers and platforms.
+  // This often leads to "wraparound" where the value unexpectedly becomes negative
+  ss = 32769;
+  std::cout << "check ss: " << ss << "\n";
 
   // BEST PRACTICE
   // Favor signed numbers over unsigned numbers for holding quantities (even quantities that should be non-negative)
