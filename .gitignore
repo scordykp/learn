@@ -36,6 +36,7 @@
 *.exe
 *.out
 *.app
+*.map
 main
 
 # debug information files
